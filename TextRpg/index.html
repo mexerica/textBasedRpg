@@ -1,64 +1,22 @@
 <!Doctype HTML>
 <html lang="en-us">
+
 	<head>
 		<meta charset="UFT-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Text Rpg</title>
 	</head>
+
 	<body>
-		<div id = 'text' style="font-size:30px">You are in a cave, it is an unknown place. you don't remember how you got here.</div>
-		<div id = 'another' style="color:Red">Move on or try to leave.</div>
-		<button onclick="first()" class="btn">Option 1</button>
-		<button onclick="second()" class="btn">Option 2</button>
+		<div id = 'text' style="font-size:30px"></div>
+		<div id = 'another' style="color:Red"></div>
+		<button onclick="check(0)" id="btn-esq" class="btn"></button>
+		<button onclick="check(1)" id="btn-dir" class="btn"></button>
 		<button onclick="status()" class="btn">Status</button>
-		<div id = 'more' style="color:Blue"></div>
-		
-		
+		<div id='more' style="color:Blue"></div>
 	<body>
-	<script>
-		let textElement = document.getElementById('text');
-		let anotherElement = document.getElementById('another');
-		let moreElement = document.getElementById('more');
-		
-		let party = 1;
-		let moment = 1;
-		
-		let eu = [1,2,4,0];
-		let n = [1,5,7,1];
-			
-		function first(){
-			if (moment == 1){
-				textElement.textContent = "You instinctively go deeper into the cave. You keep walking until you find two paths.";
-				anotherElement.textContent = "Go right or go left?";
-			} else if(moment == 2){
-				textElement.textContent = "Going to the right seems like the right thing to do. You You keep walking until a bat attacks you";
-				anotherElement.textContent = "Fight or flee?";
-			} else if(moment == 3){
-				textElement.textContent = "You win the fight with a single blow. Won 1xp";
-				anotherElement.textContent = "Continue or return to entrance(you know the answer)";
-				eu[3] += 1;
-			} else if(moment == 4){
-				textElement.textContent = "You move on, almost as if someone is forcing you to. After some walking in an overwhelming darkness, it is broken by a small light, you keep approaching but you start to feel awkward and pass out before you reach your destination.";
-				anotherElement.textContent = "??????";
-			}
-			moreElement.textContent = " ";
-			moment += 1;
-		}
-		
-		function second(){
-			if (moment < 20){
-				textElement.textContent = "Try again";
-			}
-			moreElement.textContent = " ";
-		}
-		
-		function status(){
-			moreElement.textContent = "Você: Level: " + eu[0] + " Força: " + eu[1] + " Defesa: " + eu[2] + " Exp: " + eu[3];
-			if (party === 2) {
-				moreElement.textContent = "Você: Level: " + eu[0] + " Força: " + eu[1] + " Defesa: " + eu[2] + " Exp: " + eu[3] +"/ N: Level: " + n[0] + " Força: " + n[1] + " Defesa: " + n[2] + " Exp: " + n[3];
-			} 
-		}
-		
-	</script
+
+	<script src="./index.js"></script>
+
 </html>
